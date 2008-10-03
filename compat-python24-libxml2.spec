@@ -5,7 +5,7 @@
 
 Summary: Python2.4 bindings for the libxml2 library
 Name: compat-python24-libxml2
-Version: 2.6.32
+Version: 2.7.1
 Release: 2%{?dist}
 License: MIT
 Group: Development/Libraries
@@ -17,7 +17,7 @@ URL: http://xmlsoft.org/
 Patch0: multilib.patch
 
 Provides: libxml2-python24 = %{version}-%{release}
-Obsoletes: libxml2-python24 < 2.6.32-2
+Obsoletes: libxml2-python24 < 2.7.1-2
 
 %description
 The libxml2-python24 package contains a module that permits applications
@@ -62,6 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/python.html
 
 %changelog
+* Fri Oct 03 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.7.1-2
+- update to 2.7.1 on request from Jonathan
+
 * Sat Aug 09 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.6.32-2
 - rebuild for RPM Fusion
 - add provides and obsoletes for libxml2-python24 from livna
