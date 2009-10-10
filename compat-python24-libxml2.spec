@@ -5,8 +5,8 @@
 
 Summary: Python2.4 bindings for the libxml2 library
 Name: compat-python24-libxml2
-Version: 2.7.3
-Release: 2%{?dist}
+Version: 2.7.5
+Release: 1%{?dist}
 License: MIT
 Group: Development/Libraries
 Source: ftp://xmlsoft.org/libxml2/libxml2-%{version}.tar.gz
@@ -57,11 +57,18 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitearch}/drv_libxml2.py*
 %{python_sitearch}/libxml2mod*
 %doc python/TODO
+%doc python/libxml2class.txt
 %doc python/tests/*.py
 %doc doc/*.py
 %doc doc/python.html
 
 %changelog
+* Sun Oct 04 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.7.5-1
+- update to 2.7.5
+
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.7.3-3
+- rebuild for new F11 features
+
 * Mon Feb 02 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.7.3-1
 - update to 2.7.3
 
