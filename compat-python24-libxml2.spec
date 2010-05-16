@@ -1,11 +1,11 @@
-%define compat_python %{_bindir}/python2.4
+%global compat_python %{_bindir}/python2.4
 
-%{!?python_sitearch: %define python_sitearch %(%{compat_python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-%{!?python_sitelib: %define python_sitelib %(%{compat_python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
+%global python_sitearch %(%{compat_python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")
+%global python_sitelib %(%{compat_python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")
 
 Summary: Python2.4 bindings for the libxml2 library
 Name: compat-python24-libxml2
-Version: 2.7.6
+Version: 2.7.7
 Release: 1%{?dist}
 License: MIT
 Group: Development/Libraries
@@ -63,6 +63,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/python.html
 
 %changelog
+* Sun May 16 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.7.7-1
+- update to 2.7.7
+- define python_site{lib|arch} always, as we use compat-python-24
+- use global instead of define for macro defintions
+
 * Sat Oct 10 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 2.7.6-1
 - update to 2.7.6
 
